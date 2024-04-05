@@ -66,14 +66,17 @@ export class InventoryComponent implements OnInit {
           // Assuming response is an array of books
           const books = response.books;
           if (books && books.length > 0) {
-            // Take the first book for demonstration, you can loop through all books here
-            const book = books[0];
-            // Encode only name and category into QR code
-            this.qrData = `Name: ${book.name}, Category: ${book.category}`;
+            // Loop through each book
+            this.books = books.map((book: any) => {
+              // Encode name and category into QR code for each book
+              const qrData = `Name: ${book.name}, Category: ${book.category}`;
+              return { ...book, qrData }; // Add qrData to each book object
+            });
           }
         },
       );
   }
+  
 }
 
 

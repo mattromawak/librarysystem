@@ -48,7 +48,7 @@
                 <div *ngFor="let book of books" class="book-card">
                     <div>
                         <div class="staticBook"></div>
-                        <qrcode [qrdata]="qrData"></qrcode>
+                        <qrcode [qrdata]="book.qrData"></qrcode>
                         <h2>{{ book.name }}</h2>
                         <p>Category: {{ book.category }}</p>
                         <p>Description: {{ book.description }}</p>
@@ -67,10 +67,10 @@
                     <button (click)="cancelEdit()" class="action-button">Cancel</button>
                 </div>
             </div>
-
         </div>
         <br>
     </div>
+
 
     <script>
         // Fetch book data from the server
