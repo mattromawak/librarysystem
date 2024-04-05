@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http'; // Ensure this line is present
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -13,6 +14,7 @@ import { BookManagementComponent } from './bookmanagement/bookmanagement.compone
 import { AddbooksComponent } from './addbooks/addbooks.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ManageaccountsComponent } from './manageaccounts/manageaccounts.component';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,11 @@ import { ManageaccountsComponent } from './manageaccounts/manageaccounts.compone
     BookManagementComponent,
     AddbooksComponent,
     InventoryComponent,
-    ManageaccountsComponent
+    ManageaccountsComponent,
+    QrcodeComponent
   ],
   imports: [
+    QRCodeModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,

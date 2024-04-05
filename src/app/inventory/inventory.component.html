@@ -27,7 +27,6 @@
     <div class="container-fluid content">
         <p class="upper-label">
             <a routerLink="/addbooks" class="text-button">Book List</a>
-            <a routerLink="/bookmanagement" class="btn btn-primary">Book Table</a>
         </p>
         <div class="book-list-container">
             <div class="book-input-field">
@@ -49,6 +48,7 @@
                 <div *ngFor="let book of books" class="book-card">
                     <div>
                         <div class="staticBook"></div>
+                        <qrcode [qrdata]="qrData"></qrcode>
                         <h2>{{ book.name }}</h2>
                         <p>Category: {{ book.category }}</p>
                         <p>Description: {{ book.description }}</p>

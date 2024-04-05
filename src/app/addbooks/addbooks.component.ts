@@ -14,6 +14,7 @@ export class AddbooksComponent implements OnInit {
   books: any[] = []; // Define books array
   selectedBook: any = {}; // Define selectedBook object
   editingBook: boolean = false; // Define editingBook boolean
+  qrData: string = 'Data to encode into QR code';
 
   constructor(private http: HttpClient) { }
 

@@ -10,11 +10,13 @@ export class InventoryComponent implements OnInit {
   books: any[] = [];
   selectedBook: any = {};
   editingBook: boolean = false;
+  qrData: string = '';
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.fetchBooks();
+    this.fetchBookData(); 
   }
 
   fetchBooks() {
@@ -55,4 +57,23 @@ export class InventoryComponent implements OnInit {
   cancelEdit() {
     this.editingBook = false;
   }
+
+  fetchBookData() {
+    // Make HTTP request to fetch book data
+    this.http.get<any>('http://localhost:3000/books')
+      .subscribe(
+        (response) => {
+          // Assuming response is an array of books
+          const books = response.books;
+          if (books && books.length > 0) {
+            // Take the first book for demonstration, you can loop through all books here
+            const book = books[0];
+            // Encode only name and category into QR code
+            this.qrData = `Name: ${book.name}, Category: ${book.category}`;
+          }
+        },
+      );
+  }
 }
+
+

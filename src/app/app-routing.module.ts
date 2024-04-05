@@ -8,6 +8,7 @@ import { BookManagementComponent } from './bookmanagement/bookmanagement.compone
 import { AddbooksComponent } from './addbooks/addbooks.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ManageaccountsComponent } from './manageaccounts/manageaccounts.component';
+import { QrcodeComponent } from './qrcode/qrcode.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'addbooks', component: AddbooksComponent },
   { path: 'inventory', component: InventoryComponent },
   { path: 'manageaccounts', component: ManageaccountsComponent },
+  { path: 'qrcode', component: QrcodeComponent },
   // Add more routes as needed
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
